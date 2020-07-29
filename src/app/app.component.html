@@ -1,0 +1,14 @@
+<mat-sidenav-container>
+    <mat-sidenav #sidenav mode="over" (click)="sidenav.toggle()">
+        <app-navlist></app-navlist>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div id="loader">
+            <mat-progress-bar *ngIf='load' mode="indeterminate"></mat-progress-bar>
+        </div>
+        <div class="main-Content">
+            <app-header id="appHeader" (Sidenavtoggle)="sidenav.toggle()"></app-header>
+            <router-outlet (activate)="onActivate($event)"></router-outlet>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>

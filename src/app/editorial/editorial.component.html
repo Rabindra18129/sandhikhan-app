@@ -1,0 +1,14 @@
+<div fxFlex fxLayout="column" fxLayoutGap="1%" style="position: relative; top: 60px;">
+    <div class="card" style="padding: 1%;">
+        <div class="card-body" style="overflow: auto;">
+            <h3 class="card-title">সম্পাদকীয় > {{EditorialData.title}}</h3>
+            <mat-divider></mat-divider>
+            <div style="padding: 3%;">
+                <p class="card-text" *ngFor='let pragraph of EditorialData.paragraphs'>
+                    {{pragraph}}
+                </p>
+
+            </div>
+        </div>
+    </div>
+</div>

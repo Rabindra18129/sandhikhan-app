@@ -1,0 +1,4 @@
+applications:
+- name: sandhikhan-web-app
+  memory: 512M
+  buildpack: staticfile_buildpack
