@@ -3,28 +3,23 @@
     <div>
         <mat-toolbar style="background-color: white;">
             <mat-toolbar-row>
-                <div fxFlex fxLayoutGap="1%">
-                    <div fxFlex.lg="66%" class="parent card card-header">
+                <div fxFlex>
+                    <div fxFlex class="parent card card-header">
                         <div class="child">
-                            <h2><b>{{CurrentIssue.issue_title}}</b></h2>
-                        </div>
-                    </div>
-                    <div fxFlex fxHide.xs fxHide.sm class="parent card card-header">
-                        <div class="child">
-                            <h2><b>শুধুমাত্র ওয়েবের জন্য</b></h2>
+                            <h2><b>{{Issue.issue_title}}</b></h2>
                         </div>
                     </div>
                 </div>
             </mat-toolbar-row>
         </mat-toolbar>
     </div>
-    <div class="issueContent" fxFlex fxLayout.lt-md="column" fxLayout.sm="row" fxLayoutGap="1%">
+    <div class="issueContent" fxFlex fxLayout.lt-md="column" fxLayout="row" fxLayoutGap="1%">
         <div fxFlex class="card">
             <div class="card-header">
                 সম্পাদকীয়
             </div>
             <div fxLayout="column" class="card-body">
-                <div fxFlex *ngFor='let editorial of CurrentIssue.editorialDetails'>
+                <div fxFlex *ngFor='let editorial of Issue.editorialDetails'>
                     <h4 class="card-title">{{editorial.editorial_title}}</h4>
 
                     <p class="card-text">{{editorial.short_description}}</p>
@@ -43,7 +38,7 @@
                 মূল লেখা
             </div>
             <div fxLayout="column" class="card-body">
-                <div fxFlex *ngFor='let article of CurrentIssue.articleDetails'>
+                <div fxFlex *ngFor='let article of Issue.articleDetails'>
                     <h4 class="card-title">{{article.article_title}}</h4>
                     <h6 class="card-subtitle mb-2 text-muted"> {{article.author}}</h6>
                     <p class="card-text">{{article.short_description}}</p>
@@ -54,34 +49,6 @@
                 </div>
             </div>
         </div>
-        <mat-divider class="hide-divider" [vertical]="true"></mat-divider>
-        <mat-divider class="hide-horizontal-divider"></mat-divider>
-        <div fxFlex class="card">
-            <div class="card-header">
-                শুধুমাত্র ওয়েবের জন্য
-            </div>
-            <div fxLayout="column" class="card-body">
-                <div fxFlex *ngIf='issueLoader'>
-                    <div class="parent">
-                        <div class="child">
-                            <mat-spinner></mat-spinner>
-                        </div>
-                    </div>
-
-                </div>
-                <div fxFlex *ngFor='let webExclusive of AllWebExclusive'>
-                    <h4 class="card-title">{{webExclusive.title}}</h4>
-                    <p class="card-text">{{webExclusive.shortdescription}}
-                    </p>
-                    <a routerLinkActive="active" [routerLink]="['/webexclusive',webExclusive.browsertitle,webExclusive.id]" mat-button>
-                                    আরও পড়ুন</a>
-                    <br>
-                    <mat-divider></mat-divider>
-                </div>
-
-            </div>
-        </div>
-
     </div>
     <mat-divider></mat-divider>
     <div>

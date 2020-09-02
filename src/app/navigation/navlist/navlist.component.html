@@ -3,5 +3,9 @@
         Sandhikhan Logo!
     </object>
     <a mat-list-item routerLinkActive="active" [routerLink]="['/home/currentissue']"> সংস্করণ </a>
-    <a mat-list-item style="display: none;">সংরক্ষণাগার</a>
+    <mat-list>
+        <mat-list-item> <a routerLinkActive="active" [routerLink]="['/archive/issue-archive']"> সন্ধিক্ষণের অন্যান্য  সংস্করণ </a> </mat-list-item>
+        <mat-list-item> সন্ধিক্ষণের PDF সংস্করণ </mat-list-item>
+        <mat-list-item> ওয়েবের অন্যান্য লেখা </mat-list-item>
+    </mat-list>
 </mat-nav-list>

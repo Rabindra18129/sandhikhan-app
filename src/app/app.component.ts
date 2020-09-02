@@ -30,6 +30,8 @@ export class AppComponent implements OnInit {
     }
   }
   scrollTop(): void {
+    console.log('here');
+    window.scrollTo(0,0);
   }
   onActivate(event) {
     

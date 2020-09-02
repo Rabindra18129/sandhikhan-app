@@ -1,0 +1,61 @@
+<div id="top"></div>
+<div fxFlex fxLayout="column" fxLayoutGap="1%" style="position: relative; top: 60px;">
+    <div>
+        <mat-toolbar style="background-color: white;">
+            <mat-toolbar-row>
+                <div fxFlex>
+                    <div fxFlex class="parent card card-header">
+                        <div class="child">
+                            <h2><b>সন্ধিক্ষণের অন্যান্য  সংস্করণ</b></h2>
+                        </div>
+                    </div>
+                </div>
+            </mat-toolbar-row>
+        </mat-toolbar>
+    </div>
+    <div class="issueContent" fxFlex>
+        <div fxFlex class="card">
+            <div fxLayout="column" class="card-body">
+                <div style="padding: 1%;" *ngFor="let issue of IssueArchive.issues">
+                    <mat-card class="example-card">
+                        <mat-card-header>
+                            <a [routerLink]="['/home/issue',issue.issue_id,issue.browser_title]">
+                                <mat-card-title><b style="color:crimson;">{{issue.issue_title}}</b></mat-card-title>
+                            </a>
+                        </mat-card-header>
+                        <mat-card-content>
+                            <mat-card-subtitle><b style="color: black;"> সম্পাদকীয়</b></mat-card-subtitle>
+                            <h3 *ngFor="let editorial of issue.editorialDetails">
+                                <a [routerLink]="['/editorial',editorial.browser_title,editorial.editorial_id]">
+                                    <p>
+                                        {{editorial.editorial_title}}
+                                    </p>
+                                </a>
+                            </h3>
+                        </mat-card-content>
+                        <br>
+                        <mat-divider></mat-divider>
+                        <br>
+                        <mat-card-content>
+                            <mat-card-subtitle><b style="color: black;"> মূল লেখা</b></mat-card-subtitle>
+                            <h3 *ngFor="let article of issue.articleDetails">
+                                <a [routerLink]="['/article',article.browser_title,article.article_id]">
+                                    <p>
+                                        {{article.article_title}}
+                                    </p>
+                                </a>
+
+                            </h3>
+                        </mat-card-content>
+                    </mat-card>
+                    <mat-divider></mat-divider>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="issueContent" fxFlex>
+        <mat-paginator [length]="IssueArchive.recordCount.record_count" [pageSize]="10" [hidePageSize]="true">
+        </mat-paginator>
+
+    </div>
+</div>

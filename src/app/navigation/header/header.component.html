@@ -1,19 +1,26 @@
-<mat-toolbar style="background-color: #E8EAF6;">
-    <div fxHide.gt-xs>
-        <button mat-icon-button (click)="onSidenavToggle()">
-                        <mat-icon>menu</mat-icon>
-                    </button>
-    </div>
-    <div>
-        <object height="80" width="100" type="image/svg+xml" data="/assets/sandhi.svg">
-            Sandhikhan Logo!
-        </object>
-    </div>
+<div>
+    <mat-toolbar style="background-color: #E8EAF6;">
+        <div fxHide.gt-xs>
+            <button mat-icon-button (click)="onSidenavToggle()">
+                            <mat-icon>menu</mat-icon>
+                        </button>
+        </div>
+        <div>
+            <object height="80" width="100" type="image/svg+xml" data="/assets/sandhi.svg">
+                Sandhikhan Logo!
+            </object>
+        </div>
 
-    <div fxFlex fxLayoutAlign="end" fxHide.xs>
+        <div fxFlex fxLayoutAlign="end" fxHide.xs>
 
-        <a mat-button routerLinkActive="active" [routerLink]="['/home/currentissue']"> সংস্করণ </a>
-        <a mat-button style="display: none;">সংরক্ষাণাগার </a>
-
-    </div>
-</mat-toolbar>
+            <a mat-button routerLinkActive="active" [routerLink]="['/home/currentissue']">
+                <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon> সংস্করণ </a>
+            <button mat-button [matMenuTriggerFor]="menu">সংরক্ষাণাগার<mat-icon>arrow_drop_down</mat-icon></button>
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item><a routerLinkActive="active" [routerLink]="['/archive/issue-archive']"> সন্ধিক্ষণের অন্যান্য  সংস্করণ </a></button>
+                <button mat-menu-item>সন্ধিক্ষণের PDF সংস্করণ </button>
+                <button mat-menu-item>ওয়েবের অন্যান্য লেখা </button>
+            </mat-menu>
+        </div>
+    </mat-toolbar>
+</div>

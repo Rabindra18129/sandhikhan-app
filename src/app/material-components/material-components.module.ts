@@ -10,7 +10,9 @@ import {MatCardModule} from '@angular/material/card';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
-const MATERIAL_CONTENT=[MatProgressSpinnerModule,MatProgressBarModule,MatButtonModule,MatIconModule,MatFormFieldModule,MatInputModule,
+import {MatMenuModule} from '@angular/material/menu';
+import {MatPaginatorModule} from '@angular/material/paginator';
+const MATERIAL_CONTENT=[MatPaginatorModule,MatMenuModule,MatProgressSpinnerModule,MatProgressBarModule,MatButtonModule,MatIconModule,MatFormFieldModule,MatInputModule,
   MatListModule,MatSidenavModule,MatToolbarModule,MatCardModule,MatDividerModule]
 
 
