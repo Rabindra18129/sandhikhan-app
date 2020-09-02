@@ -22,10 +22,15 @@ export class IssueService {
                   pipe(catchError(this.handleError));
     }
 
+    getIssue(id:string):Observable<any>{
+      return this.httpClient.get(`${this.apiURL}issue/get/${id}`).
+        pipe(catchError(this.handleError));
+    }
+
     private handleError(error: HttpErrorResponse) {
         if (error.error instanceof ErrorEvent) {
           // A client-side or network error occurred. Handle it accordingly.
-          console.error('An error occurred:', error.error.message);
+          console.error('An error occurred:', error);
         } else {
           // The backend returned an unsuccessful response code.
           // The response body may contain clues as to what went wrong,

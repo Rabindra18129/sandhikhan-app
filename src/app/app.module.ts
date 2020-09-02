@@ -10,6 +10,8 @@ import { NavlistComponent } from './navigation/navlist/navlist.component';
 import { RoutingModule } from './routing/routing.module';
 import {APP_Config,Config} from './app.config';
 import {HttpClientModule} from '@angular/common/http';
+
+
 @NgModule({
   declarations: [
     AppComponent,

@@ -7,17 +7,14 @@ const routes:Routes=[
   {path:'home',loadChildren:'../issue/issue-module#IssueModule'},
   {path:'editorial',loadChildren:'../editorial/editorial.module#EditorialModule'},
   {path: 'article',loadChildren:'../article/article.module#ArticleModule'},
-  {path: 'webexclusive',loadChildren:'../webexclusive/webexclusive.module#WebExclusiveModule'}
+  {path: 'webexclusive',loadChildren:'../webexclusive/webexclusive.module#WebExclusiveModule'},
+  {path: 'archive',loadChildren:'../archive/issue-archive/archive.module#ArchiveModule'}
 ];
 
 @NgModule({
   declarations: [],
   imports: [
-    RouterModule.forRoot(routes,{
-      scrollPositionRestoration: 'enabled',
-      anchorScrolling: 'enabled',
-      scrollOffset: [64,64] // [x, y]
-    })
+    RouterModule.forRoot(routes,{ scrollPositionRestoration: 'enabled' })
   ],
   exports:[RouterModule]
 })
