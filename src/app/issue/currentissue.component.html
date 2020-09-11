@@ -1,30 +1,35 @@
 <div id="top"></div>
-<div fxFlex fxLayout="column" fxLayoutGap="1%" style="position: relative; top: 60px;">
-    <div>
-        <mat-toolbar style="background-color: white;">
-            <mat-toolbar-row>
-                <div fxFlex fxLayoutGap="1%">
-                    <div fxFlex.lg="66%" class="parent card card-header">
-                        <div class="child">
-                            <h2><b>{{CurrentIssue.issue_title}}</b></h2>
-                        </div>
-                    </div>
-                    <div fxFlex fxHide.xs fxHide.sm class="parent card card-header">
-                        <div class="child">
-                            <h2><b>শুধুমাত্র ওয়েবের জন্য</b></h2>
-                        </div>
-                    </div>
+<div style="position: relative; top: 60px;">
+    <div id="sub-title">
+        <div id="issue-title">
+            <div class="parent">
+                <div class="child">
+                    <h2><b>{{CurrentIssue.issue_title}}</b></h2>
                 </div>
-            </mat-toolbar-row>
-        </mat-toolbar>
+            </div>
+        </div>
+        <div id="exclusive-title">
+            <div class="parent">
+                <div class="child">
+                    <h2><b>শুধুমাত্র ওয়েবের জন্য</b></h2>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="issueContent" fxFlex fxLayout.lt-md="column" fxLayout.sm="row" fxLayoutGap="1%">
-        <div fxFlex class="card">
+    <div id="mobile-sub-title">
+        <div class="parent">
+            <div class="child">
+                <h2><b>সন্ধিক্ষণ ৪৫তম বর্ষ, বিশেষ ওয়েব সংখ্যা, জুলাই ২০২০</b></h2>
+            </div>
+        </div>
+    </div>
+    <div id="content">
+        <div class="card">
             <div class="card-header">
                 সম্পাদকীয়
             </div>
-            <div fxLayout="column" class="card-body">
-                <div fxFlex *ngFor='let editorial of CurrentIssue.editorialDetails'>
+            <div class="card-body">
+                <div *ngFor='let editorial of CurrentIssue.editorialDetails'>
                     <h4 class="card-title">{{editorial.editorial_title}}</h4>
 
                     <p class="card-text">{{editorial.short_description}}</p>
@@ -38,12 +43,12 @@
         </div>
         <mat-divider class="hide-divider" [vertical]="true"></mat-divider>
         <mat-divider class="hide-horizontal-divider"></mat-divider>
-        <div fxFlex class="card">
+        <div class="card">
             <div class="card-header">
                 মূল লেখা
             </div>
-            <div fxLayout="column" class="card-body">
-                <div fxFlex *ngFor='let article of CurrentIssue.articleDetails'>
+            <div class="card-body">
+                <div *ngFor='let article of CurrentIssue.articleDetails'>
                     <h4 class="card-title">{{article.article_title}}</h4>
                     <h6 class="card-subtitle mb-2 text-muted"> {{article.author}}</h6>
                     <p class="card-text">{{article.short_description}}</p>
@@ -56,12 +61,12 @@
         </div>
         <mat-divider class="hide-divider" [vertical]="true"></mat-divider>
         <mat-divider class="hide-horizontal-divider"></mat-divider>
-        <div fxFlex class="card">
+        <div class="card">
             <div class="card-header">
                 শুধুমাত্র ওয়েবের জন্য
             </div>
-            <div fxLayout="column" class="card-body">
-                <div fxFlex *ngIf='issueLoader'>
+            <div class="card-body">
+                <div *ngIf='issueLoader'>
                     <div class="parent">
                         <div class="child">
                             <mat-spinner></mat-spinner>
@@ -69,7 +74,7 @@
                     </div>
 
                 </div>
-                <div fxFlex *ngFor='let webExclusive of AllWebExclusive'>
+                <div *ngFor='let webExclusive of AllWebExclusive'>
                     <h4 class="card-title">{{webExclusive.title}}</h4>
                     <p class="card-text">{{webExclusive.shortdescription}}
                     </p>
@@ -83,6 +88,7 @@
         </div>
 
     </div>
+
     <mat-divider></mat-divider>
     <div>
         <div class="parent">

@@ -7,8 +7,7 @@
             <mat-divider></mat-divider>
 
             <div style="padding: 3%;">
-                <p class="card-text" *ngFor='let paragraph of ArticleData.paragraphs'>
-                    {{paragraph}}
+                <p class="card-text" *ngFor='let paragraph of ArticleData.paragraphs' [innerHTML]="paragraph">
                 </p>
             </div>
         </div>

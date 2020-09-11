@@ -5,10 +5,8 @@
             <h3 class="card-title">সম্পাদকীয় > {{EditorialData.title}}</h3>
             <mat-divider></mat-divider>
             <div style="padding: 3%;">
-                <p class="card-text" *ngFor='let pragraph of EditorialData.paragraphs'>
-                    {{pragraph}}
+                <p class="card-text" *ngFor='let paragraph of EditorialData.paragraphs' [innerHTML]="paragraph">
                 </p>
-
             </div>
         </div>
     </div>

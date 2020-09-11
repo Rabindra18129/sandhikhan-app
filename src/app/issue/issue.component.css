@@ -1,7 +1,31 @@
 .issueContent {
-    padding-left: 1%;
-    padding-right: 1%;
-    padding-bottom: 1%;
+    width: 99%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+}
+
+.issueContent>div {
+    width: 49%;
+    margin: .5%;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: auto;
+}
+
+.sub-title {
+    width: 99%;
+    height: auto;
+    z-index: 5;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: .5%;
 }
 
 .card {
@@ -59,7 +83,7 @@
     padding: .75rem 1.25rem;
     margin-bottom: 0;
     background-color: rgba(0, 0, 0, .03);
-    border-bottom: 1px solid rgba(0, 0, 0, .125)
+    border-bottom: 1px solid rgba(0, 0, 0, .125);
 }
 
 .card-header:first-child {
@@ -76,7 +100,6 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 100%;
 }
 
 .child {
@@ -92,5 +115,17 @@
 @media screen and (min-width: 960px) {
     .hide-horizontal-divider {
         display: none;
+    }
+}
+
+@media (max-width: 960px) {
+    .issueContent {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+    }
+    .issueContent>div {
+        width: 100%;
+        margin: .3%;
     }
 }

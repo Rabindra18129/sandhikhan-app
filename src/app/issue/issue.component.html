@@ -1,25 +1,19 @@
 <div id="top"></div>
-<div fxFlex fxLayout="column" fxLayoutGap="1%" style="position: relative; top: 60px;">
-    <div>
-        <mat-toolbar style="background-color: white;">
-            <mat-toolbar-row>
-                <div fxFlex>
-                    <div fxFlex class="parent card card-header">
-                        <div class="child">
-                            <h2><b>{{Issue.issue_title}}</b></h2>
-                        </div>
-                    </div>
-                </div>
-            </mat-toolbar-row>
-        </mat-toolbar>
+<div class="main-content" style="position: relative; top: 60px;">
+    <div class="sub-title">
+        <div class="parent">
+            <div class="child">
+                <h2><b>{{Issue.issue_title}}</b></h2>
+            </div>
+        </div>
     </div>
-    <div class="issueContent" fxFlex fxLayout.lt-md="column" fxLayout="row" fxLayoutGap="1%">
-        <div fxFlex class="card">
+    <div class="issueContent">
+        <div class="card">
             <div class="card-header">
                 সম্পাদকীয়
             </div>
-            <div fxLayout="column" class="card-body">
-                <div fxFlex *ngFor='let editorial of Issue.editorialDetails'>
+            <div class="card-body">
+                <div *ngFor='let editorial of Issue.editorialDetails'>
                     <h4 class="card-title">{{editorial.editorial_title}}</h4>
 
                     <p class="card-text">{{editorial.short_description}}</p>
@@ -33,12 +27,12 @@
         </div>
         <mat-divider class="hide-divider" [vertical]="true"></mat-divider>
         <mat-divider class="hide-horizontal-divider"></mat-divider>
-        <div fxFlex class="card">
+        <div class="card">
             <div class="card-header">
                 মূল লেখা
             </div>
-            <div fxLayout="column" class="card-body">
-                <div fxFlex *ngFor='let article of Issue.articleDetails'>
+            <div class="card-body">
+                <div *ngFor='let article of Issue.articleDetails'>
                     <h4 class="card-title">{{article.article_title}}</h4>
                     <h6 class="card-subtitle mb-2 text-muted"> {{article.author}}</h6>
                     <p class="card-text">{{article.short_description}}</p>

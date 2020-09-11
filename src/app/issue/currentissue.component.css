@@ -94,3 +94,67 @@
         display: none;
     }
 }
+
+#main {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: auto;
+    position: fixed;
+    top: 60px;
+}
+
+#sub-title {
+    width: 99%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+}
+
+#mobile-sub-title {
+    display: none;
+}
+
+#content {
+    width: 99%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+}
+
+#content>div {
+    width: 33%;
+    margin: .5%;
+}
+
+@media (max-width: 960px) {
+    #content {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+    }
+    #mobile-sub-title {
+        width: 99%;
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        margin: 0;
+    }
+    #sub-title {
+        display: none;
+    }
+    #content>div {
+        width: 100%;
+    }
+}
+
+#issue-title {
+    display: flex;
+    flex-grow: .5;
+}
+
+#exclusive-title {
+    display: flex;
+    flex-grow: .5;
+}
