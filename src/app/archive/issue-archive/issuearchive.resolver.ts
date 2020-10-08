@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Resolve, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { Observable, of, EMPTY } from 'rxjs';
 import { mergeMap, take } from 'rxjs/operators';
-import { ArchiveService } from './archive-service';
+import { ArchiveService } from '../archive-service';
 import { IIssueArchive } from './issue-archive.model';
 
 @Injectable()

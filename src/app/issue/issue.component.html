@@ -1,13 +1,20 @@
 <div id="top"></div>
 <div class="main-content" style="position: relative; top: 60px;">
-    <div class="sub-title">
+    <div id="sub-title">
         <div class="parent">
             <div class="child">
                 <h2><b>{{Issue.issue_title}}</b></h2>
             </div>
         </div>
     </div>
-    <div class="issueContent">
+    <div id="mobile-sub-title">
+        <div class="parent">
+            <div class="child">
+                <h2><b>{{Issue.issue_title}}</b></h2>
+            </div>
+        </div>
+    </div>
+    <div id="content" class="issueContent">
         <div class="card">
             <div class="card-header">
                 সম্পাদকীয়
@@ -47,7 +54,7 @@
     <mat-divider></mat-divider>
     <div>
         <div class="parent">
-            <div class="child">
+            <div id="footer" class="child">
                 <footer style="padding: 1%;">
                     মন্তব্য করার জন্য ইমেল প্রেরণ করুন @ <b>sandhi.edb@gmail.com</b>
                 </footer>

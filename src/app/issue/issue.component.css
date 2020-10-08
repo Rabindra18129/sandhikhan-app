@@ -1,31 +1,7 @@
 .issueContent {
-    width: 99%;
-    height: auto;
-    display: flex;
-    flex-direction: row;
-}
-
-.issueContent>div {
-    width: 49%;
-    margin: .5%;
-}
-
-.main-content {
-    display: flex;
-    flex-direction: column;
-    width: auto;
-    height: auto;
-}
-
-.sub-title {
-    width: 99%;
-    height: auto;
-    z-index: 5;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    margin: .5%;
+    padding-left: 1%;
+    padding-right: 1%;
+    padding-bottom: 1%;
 }
 
 .card {
@@ -36,6 +12,10 @@
     background-clip: border-box;
     border: 1px solid rgba(0, 0, 0, .125);
     border-radius: .25rem
+}
+
+#footer {
+    font-family: "Brinda";
 }
 
 .card>hr {
@@ -83,7 +63,7 @@
     padding: .75rem 1.25rem;
     margin-bottom: 0;
     background-color: rgba(0, 0, 0, .03);
-    border-bottom: 1px solid rgba(0, 0, 0, .125);
+    border-bottom: 1px solid rgba(0, 0, 0, .125)
 }
 
 .card-header:first-child {
@@ -100,6 +80,7 @@
     justify-content: center;
     align-items: center;
     width: 100%;
+    height: 100%;
 }
 
 .child {
@@ -118,14 +99,70 @@
     }
 }
 
+#main {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: auto;
+    position: fixed;
+    top: 60px;
+}
+
+#sub-title {
+    width: 99%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+}
+
+#mobile-sub-title {
+    display: none;
+}
+
+#content {
+    width: 99%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+}
+
+#content>div {
+    width: 50%;
+    margin: .5%;
+}
+
 @media (max-width: 960px) {
-    .issueContent {
+    #content {
         height: auto;
         display: flex;
         flex-direction: column;
     }
-    .issueContent>div {
-        width: 100%;
-        margin: .3%;
+    #footer {
+        padding-left: 8%;
     }
+    #mobile-sub-title {
+        width: 99%;
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        margin: 0;
+        padding-left: 3%;
+    }
+    #sub-title {
+        display: none;
+    }
+    #content>div {
+        width: 100%;
+    }
+}
+
+#issue-title {
+    display: flex;
+    flex-grow: .5;
+}
+
+#exclusive-title {
+    display: flex;
+    flex-grow: .5;
 }

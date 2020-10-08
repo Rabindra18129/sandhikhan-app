@@ -1,0 +1,46 @@
+<div id="top"></div>
+<div fxFlex fxLayout="column" fxLayoutGap="1%" style="position: relative; top: 60px;">
+    <div>
+        <mat-toolbar style="background-color: white;">
+            <mat-toolbar-row>
+                <div fxFlex>
+                    <div fxFlex class="parent card card-header">
+                        <div class="child">
+                            <h2><b>ওয়েবের অন্যান্য লেখা</b></h2>
+                        </div>
+                    </div>
+                </div>
+            </mat-toolbar-row>
+        </mat-toolbar>
+    </div>
+    <div class="webexclusiveContent" fxFlex>
+        <div fxFlex class="card">
+            <div fxLayout="column" class="card-body">
+                <div style="padding: 1%;">
+                    <mat-card class="example-card" *ngFor="let webExclusive of WebExclusiveArchive.webExclusives" style="margin:1%">
+                        <mat-card-header>
+                            <a [routerLink]="['/webexclusive',webExclusive.browsertitle,webExclusive.id]">
+                                <mat-card-title><b style="color:crimson;">{{webExclusive.title}}</b></mat-card-title>
+                            </a>
+                        </mat-card-header>
+                        <mat-card-content>
+                            <h3>
+                                <p>
+                                    {{webExclusive.shortdescription}}
+                                </p>
+                            </h3>
+                        </mat-card-content>
+                        <mat-card-actions>
+                            <a [routerLink]="['/webexclusive',webExclusive.browsertitle,webExclusive.id]"><button mat-button>আরও পড়ুন</button></a>
+                        </mat-card-actions>
+                    </mat-card>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="issueContent" fxFlex>
+        <mat-paginator [length]="WebExclusiveArchive.recordCount.record_count" [pageSize]="10" [hidePageSize]="true">
+        </mat-paginator>
+
+    </div>
+</div>

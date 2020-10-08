@@ -27,7 +27,6 @@ export class WebExclusiveComponent implements OnInit,AfterViewInit{
 
     ngAfterViewInit() {
         // Hack: Scrolls to top of Page after page view initialized
-        console.log('Scroll New Function');
         let top = document.getElementById('top');
         if (top !== null) {
           top.scrollIntoView();
