@@ -18,6 +18,13 @@ export class ArchiveService{
       return this.http.get(`${this.apiURL}archive/webexclusive/1`).
         pipe(catchError(this.handleError));
     }
+    getPDFRecordCount(){
+      return this.http.get(`${this.apiURL}pdfarchive/totalcount`).
+        pipe(catchError(this.handleError));
+    }
+    getPDFByPage(pageNumber:number){
+      return this.http.get(`${this.apiURL}pdfarchive/pdflist/${pageNumber}`)
+    }
     private handleError(error: HttpErrorResponse) {
         if (error.error instanceof ErrorEvent) {
           // A client-side or network error occurred. Handle it accordingly.

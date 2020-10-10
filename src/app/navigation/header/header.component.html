@@ -18,7 +18,7 @@
             <button mat-button [matMenuTriggerFor]="menu">সংরক্ষাণাগার<mat-icon>arrow_drop_down</mat-icon></button>
             <mat-menu #menu="matMenu">
                 <button mat-menu-item><a routerLinkActive="active" [routerLink]="['/archive/issue-archive']"> সন্ধিক্ষণের অন্যান্য  সংস্করণ </a></button>
-                <button mat-menu-item>সন্ধিক্ষণের PDF সংস্করণ </button>
+                <button mat-menu-item><a routerLinkActive="active" [routerLink]="['/archive/pdf-archive']"> সন্ধিক্ষণের PDF সংস্করণ </a> </button>
                 <button mat-menu-item><a routerLinkActive="active" [routerLink]="['/archive/webexclusive-archive']">ওয়েবের অন্যান্য লেখা</a>  </button>
             </mat-menu>
         </div>
