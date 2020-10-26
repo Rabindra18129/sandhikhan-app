@@ -14,22 +14,29 @@
         <div>
             <mat-progress-bar *ngIf="loader" mode="indeterminate"></mat-progress-bar>
         </div>
-        <table class="table table-hover table-bordered">
-            <thead>
-                <tr>
-                    <th>শিরোনাম</th>
-                    <th>প্রকাশের তারিখ</th>
-                    <th>ডাউনলোড করুন</th>
-                </tr>
-            </thead>
-            <tbody *ngIf="loadFisrt">
-                <tr *ngFor="let pdfInfo of PDFIssueArchuiveList.pdfsInfo">
-                    <td>{{pdfInfo.title}}</td>
-                    <td>{{pdfInfo.publishdate | date:'MMM-yyyy'}}</td>
-                    <td><a mat-button href="{{apiURL+'pdfarchive/download/pdfissue/'+pdfInfo.filename}}" [disabled]="loader" target="_blank">ডাউনলোডের জন্য ক্লিক করুন <mat-icon>cloud_download</mat-icon></a></td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="table-responsive">
+            <table class="table table-hover table-bordered">
+                <thead>
+                    <tr>
+                        <th>শিরোনাম</th>
+                        <th>প্রকাশের তারিখ</th>
+                        <th>ডাউনলোড করুন</th>
+                    </tr>
+                </thead>
+                <tbody *ngIf="loadFisrt">
+                    <tr *ngFor="let pdfInfo of PDFIssueArchuiveList.pdfsInfo">
+                        <td><a target="_blank" href="{{apiURL+'pdfarchive/view/pdfissue/'+pdfInfo.filename}}">{{pdfInfo.title}}</a></td>
+                        <td>{{pdfInfo.publishdate | date:'MMM-yyyy'}}</td>
+                        <td>
+                            <a mat-button href="{{apiURL+'pdfarchive/download/pdfissue/'+pdfInfo.filename}}" [disabled]="loader" target="_blank">
+                                <mat-icon>save_alt</mat-icon>
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
     </div>
     <div class="pdf-content">
         <mat-paginator [pageIndex]="pageNumber-1" [length]="totalRecordCount.record_count" [pageSize]="10" [hidePageSize]="true" [disabled]="loader" (page)="getPgaeData($event)">
