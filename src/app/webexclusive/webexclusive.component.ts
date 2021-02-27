@@ -3,6 +3,7 @@ import { IWebExclusive } from './webexclusive.model';
 import { ActivatedRoute, Router, ParamMap } from '@angular/router';
 import { switchMap } from 'rxjs/operators';
 import { WebExclusiveService } from './webexclusive.service';
+import { Title } from '@angular/platform-browser';
 
 
 @Component({
@@ -12,7 +13,7 @@ import { WebExclusiveService } from './webexclusive.service';
 })
 export class WebExclusiveComponent implements OnInit,AfterViewInit{
     wbeExclusivData:IWebExclusive;
-    constructor(private service:WebExclusiveService, private route: ActivatedRoute,private router: Router) {
+    constructor(private service:WebExclusiveService, private route: ActivatedRoute,private router: Router,private titleSrv:Title) {
 
      }
 
@@ -20,12 +21,12 @@ export class WebExclusiveComponent implements OnInit,AfterViewInit{
         this.route.data
             .subscribe((data) => {
             this.wbeExclusivData=data.WebExclusive;
+            this.titleSrv.setTitle(this.wbeExclusivData.browserTitle);
             });
     }
 
     ngAfterViewInit() {
         // Hack: Scrolls to top of Page after page view initialized
-        console.log('Scroll New Function');
         let top = document.getElementById('top');
         if (top !== null) {
           top.scrollIntoView();

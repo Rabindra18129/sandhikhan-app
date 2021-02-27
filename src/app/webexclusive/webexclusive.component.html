@@ -9,7 +9,7 @@
             <mat-divider></mat-divider>
 
             <div style="margin:5%;">
-                <p class="card-text" *ngFor='let paragraph of wbeExclusivData.paragraphs'>{{paragraph}}</p>
+                <p class="card-text" *ngFor='let paragraph of wbeExclusivData.paragraphs' [innerHTML]="paragraph"></p>
             </div>
         </div>
     </div>

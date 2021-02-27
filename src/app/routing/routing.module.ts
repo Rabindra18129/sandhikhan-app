@@ -8,7 +8,7 @@ const routes:Routes=[
   {path:'editorial',loadChildren:'../editorial/editorial.module#EditorialModule'},
   {path: 'article',loadChildren:'../article/article.module#ArticleModule'},
   {path: 'webexclusive',loadChildren:'../webexclusive/webexclusive.module#WebExclusiveModule'},
-  {path: 'archive',loadChildren:'../archive/issue-archive/archive.module#ArchiveModule'}
+  {path: 'archive',loadChildren:'../archive/archive.module#ArchiveModule'}
 ];
 
 @NgModule({
