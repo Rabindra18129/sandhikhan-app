@@ -8,7 +8,7 @@ import { WebexclusiveArchiveComponent } from './webexclusive-archive/webexclusiv
 import { WebExclusiveArchiveResolver } from './webexclusive-archive/webexclusive-archive.resolver';
 const routes:Routes=[
     {path:'issue-archive',component:IssueArchiveComponent,pathMatch:'full',resolve:{IssueArchive:IssueArchiveResolver}},
-    {path:'webexclusive-archive',component:WebexclusiveArchiveComponent,pathMatch:'full',resolve:{WebExclusiveArchive:WebExclusiveArchiveResolver}},
+    {path:'webexclusive-archive',component:WebexclusiveArchiveComponent,pathMatch:'full',resolve:{WebExclusiveRecordCount:WebExclusiveArchiveResolver}},
     {path:'pdf-archive',component:PDFIssueArchiveComponent,pathMatch:'full',resolve:{PDFRecordCount:PDFIssueArchiveResolver}}
 ];
 @NgModule({

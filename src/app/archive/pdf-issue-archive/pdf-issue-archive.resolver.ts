@@ -19,6 +19,6 @@ export class PDFIssueArchiveResolver implements Resolve<IRecordCount>{
                 else{
                     return EMPTY;
                 }
-            }))
+            }));
     }
 }

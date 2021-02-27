@@ -3,14 +3,14 @@ import { Resolve, ActivatedRouteSnapshot, RouterStateSnapshot, ActivatedRoute } 
 import { Observable, of, EMPTY } from 'rxjs';
 import { mergeMap, take } from 'rxjs/operators';
 import { ArchiveService } from '../archive-service';
-import { IWebExclusiveArchive } from './webexclusive-archive.model';
+import { IRecordCount } from './webexclusive-archive.model';
 @Injectable()
-export class WebExclusiveArchiveResolver implements Resolve<IWebExclusiveArchive> {
+export class WebExclusiveArchiveResolver implements Resolve<IRecordCount> {
     constructor(private webExclusuveSrv:ArchiveService) {
 
     }
     resolve(route:ActivatedRouteSnapshot,state:RouterStateSnapshot):Observable<any> {
-        return this.webExclusuveSrv.getWebExclusiveArchiveFIrstPage().
+        return this.webExclusuveSrv.getWebExclusiveRecordCount().
             pipe(take(1),mergeMap(data => {
                 if (data){
                     return of(data);

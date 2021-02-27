@@ -14,8 +14,16 @@ export class ArchiveService{
         return this.http.get(`${this.apiURL}archive/issue/1`).
             pipe(catchError(this.handleError));
     }
-    getWebExclusiveArchiveFIrstPage(){
-      return this.http.get(`${this.apiURL}archive/webexclusive/1`).
+    getWebExclusiveArchiveByPage(pageNumber:number){
+      return this.http.get(`${this.apiURL}archive/webexclusive/${pageNumber}`).
+        pipe(catchError(this.handleError));
+    }
+    getIssueRecordCount(){
+      return this.http.get(`${this.apiURL}archive/count/issue`).
+        pipe(catchError(this.handleError));
+    }
+    getWebExclusiveRecordCount(){
+      return this.http.get(`${this.apiURL}archive/count/webexclusive`).
         pipe(catchError(this.handleError));
     }
     getPDFRecordCount(){

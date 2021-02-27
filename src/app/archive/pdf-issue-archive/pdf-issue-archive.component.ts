@@ -36,7 +36,6 @@ export class PDFIssueArchiveComponent implements OnInit,AfterViewInit{
         });
     }
     getPgaeData(pageEvent:any){
-        
         this.loader=true;
         this.pageNumber=pageEvent.pageIndex+1;
         this.scrolltoTop();

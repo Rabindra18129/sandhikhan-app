@@ -9,6 +9,24 @@
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <style>
+        @media print {
+            html,
+            body {
+                overflow: visible;
+                height: auto;
+            }
+            #printMedia>h3,
+            h4 {
+                font-style: bold;
+            }
+            #printMedia>p,
+            div,
+            {
+                overflow: visible;
+                display: block;
+            }
+        }
+        
         @font-face {
             font-family: Ganashakti;
             src: url(assets/fonts/Ganashakti.ttf);

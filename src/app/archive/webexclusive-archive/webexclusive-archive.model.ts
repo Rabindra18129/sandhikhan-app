@@ -1,8 +1,7 @@
 export interface IWebExclusiveArchive{
-    recordCount:IRecordCount;
     webExclusives:IWebExclusive[];
 }
-interface IRecordCount {
+export interface IRecordCount {
     record_count: string;
 }
 interface IWebExclusive{
