@@ -20,7 +20,9 @@
                     <mat-card class="example-card">
                         <mat-card-header>
                             <a [routerLink]="['/home/issue',issue.issue_id,issue.browser_title]">
-                                <mat-card-title><b style="color:crimson;">{{issue.issue_title}}</b></mat-card-title>
+                                <mat-card-title><b style="color:crimson;">{{issue.issue_title}} </b>
+                                    <app-new-icon-blink *ngIf='issue.isNew'></app-new-icon-blink>
+                                </mat-card-title>
                             </a>
                         </mat-card-header>
                         <mat-card-content>

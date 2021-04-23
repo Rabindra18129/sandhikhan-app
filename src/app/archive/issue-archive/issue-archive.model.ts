@@ -13,6 +13,7 @@ interface IIssue {
     issue_date: string;
     articleDetails: IArticle[];
     editorialDetails: IEditorial[];
+    isNew:boolean;
 
 }
 interface IArticle {

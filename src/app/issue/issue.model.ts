@@ -27,6 +27,7 @@ export interface IIssue{
     issue_title:string;
     issue_date:string;
     browser_title:string;
+    isNew:boolean;
     articleDetails:IArticleDetails[];
     editorialDetails:IEditorialDetails[];
 

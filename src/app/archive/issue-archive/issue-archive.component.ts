@@ -17,6 +17,7 @@ export class IssueArchiveComponent implements OnInit,AfterViewInit {
     this.route.data
     .subscribe((data) => {
       this.IssueArchive=data.IssueArchive;
+
     });
   }
   ngAfterViewInit() {

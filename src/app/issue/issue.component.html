@@ -21,7 +21,9 @@
             </div>
             <div class="card-body">
                 <div *ngFor='let editorial of Issue.editorialDetails'>
-                    <h4 class="card-title">{{editorial.editorial_title}}</h4>
+                    <h4 class="card-title">{{editorial.editorial_title}}
+                        <app-new-icon-blink *ngIf='Issue.isNew'></app-new-icon-blink>
+                    </h4>
 
                     <p class="card-text">{{editorial.short_description}}</p>
                     <a routerLinkActive="active" [routerLink]="['/editorial',editorial.browser_title,editorial.editorial_id]" mat-button>
@@ -40,7 +42,9 @@
             </div>
             <div class="card-body">
                 <div *ngFor='let article of Issue.articleDetails'>
-                    <h4 class="card-title">{{article.article_title}}</h4>
+                    <h4 class="card-title">{{article.article_title}}
+                        <app-new-icon-blink *ngIf='Issue.isNew'></app-new-icon-blink>
+                    </h4>
                     <h6 class="card-subtitle mb-2 text-muted"> {{article.author}}</h6>
                     <p class="card-text">{{article.short_description}}</p>
                     <a routerLinkActive="active" [routerLink]="['/article',article.browser_title,article.article_id]" mat-button>
