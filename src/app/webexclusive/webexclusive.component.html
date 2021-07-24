@@ -1,14 +1,14 @@
 <div id="top"></div>
 <div fxFlex fxLayout="column" style="position: relative; top: 60px;">
     <div class="card" style="padding: 1%;">
-        <div class="card-body">
+        <div class="card-body" style="overflow: auto;">
             <div style="padding: 2%;">
                 <h3 class="card-title">{{wbeExclusivData.title}}</h3>
             </div>
 
             <mat-divider></mat-divider>
 
-            <div style="margin:5%;">
+            <div style="padding: 3%;">
                 <p class="card-text" *ngFor='let paragraph of wbeExclusivData.paragraphs' [innerHTML]="paragraph"></p>
             </div>
         </div>

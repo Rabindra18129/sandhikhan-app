@@ -82,7 +82,9 @@
 
                 </div>
                 <div *ngFor='let webExclusive of AllWebExclusive'>
-                    <h4 class="card-title">{{webExclusive.title}}</h4>
+                    <h4 class="card-title">{{webExclusive.title}}
+                        <app-new-icon-blink *ngIf='webExclusive.isNew'></app-new-icon-blink>
+                    </h4>
                     <p class="card-text">{{webExclusive.shortdescription}}
                     </p>
                     <a routerLinkActive="active" [routerLink]="['/webexclusive',webExclusive.browsertitle,webExclusive.id]" mat-button>

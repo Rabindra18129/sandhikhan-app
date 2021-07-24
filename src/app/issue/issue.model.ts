@@ -4,6 +4,7 @@ export interface IWebExclusiveDteails {
     title: string;
     browsertitle: string;
     shortdescription: string;
+    isNew:boolean;
 }
 
 export interface IAllWebExclusiveDetails {
