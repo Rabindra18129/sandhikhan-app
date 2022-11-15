@@ -1,0 +1,27 @@
+.blink {
+    color: white;
+    background-color: rgba(0, 4, 255, 0.767);
+    font-size: 12px;
+    font-style: italic;
+    padding: 2px;
+    animation: blinker 1s cubic-bezier(.5, 0, 1, 1) infinite alternate;
+    -webkit-animation: blinker 1s cubic-bezier(.5, 0, 1, 1) infinite alternate;
+}
+
+@keyframes blinker {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes blinker {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}

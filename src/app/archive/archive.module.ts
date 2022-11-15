@@ -8,9 +8,10 @@ import { IssueArchiveComponent } from './issue-archive/issue-archive.component';
 import { ArchiveService } from './archive-service';
 import { WebexclusiveArchiveComponent } from './webexclusive-archive/webexclusive-archive.component';
 import { PDFIssueArchiveComponent } from './pdf-issue-archive/pdf-issue-archive.component';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
-    imports:[MaterialComponentsModule,ArchiveRoutingModule,FlexLayoutModule,FormsModule,CommonModule],
+    imports:[MaterialComponentsModule,ArchiveRoutingModule,FlexLayoutModule,FormsModule,CommonModule,SharedModule],
     declarations:[IssueArchiveComponent, WebexclusiveArchiveComponent,PDFIssueArchiveComponent],
     providers:[ArchiveService]
 })

@@ -7,9 +7,10 @@ import { MaterialComponentsModule } from '../material-components/material-compon
 import { IssueService } from './issue.service';
 import { CommonModule } from '@angular/common';
 import { IssueComponent } from './issue.component';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
-    imports:[FlexLayoutModule,IssueRoutingModule,MaterialComponentsModule,FormsModule,CommonModule],
+    imports:[FlexLayoutModule,IssueRoutingModule,MaterialComponentsModule,FormsModule,CommonModule,SharedModule],
     declarations:[CurrentissueComponent,IssueComponent],
     providers:[IssueService]
 })
