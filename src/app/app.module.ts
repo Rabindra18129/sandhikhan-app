@@ -11,13 +11,16 @@ import { RoutingModule } from './routing/routing.module';
 import {APP_Config,Config} from './app.config';
 import {HttpClientModule} from '@angular/common/http';
 import { SharedModule } from './shared/shared.module';
+import { ErrorComponent } from './error/error/error.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    NavlistComponent
+    NavlistComponent,
+    ErrorComponent,
+
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,9 @@
+<div id="top"></div>
+<div id="chapter-container">
+    <div class="chapter-container-title">
+        <h2><p>{{chapterParagrapgh.title}}</p></h2>
+    </div>
+        <div class="chapter-container-body">
+            <p *ngFor="let paragraph of chapterParagrapgh.paragraphs" [innerHTML]="paragraph"> </p>
+        </div>
+</div>

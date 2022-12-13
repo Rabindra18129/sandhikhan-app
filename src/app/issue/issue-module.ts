@@ -8,11 +8,12 @@ import { IssueService } from './issue.service';
 import { CommonModule } from '@angular/common';
 import { IssueComponent } from './issue.component';
 import { SharedModule } from '../shared/shared.module';
+import { CurrentIssueResolver } from './issue.resolver';
 
 @NgModule({
     imports:[FlexLayoutModule,IssueRoutingModule,MaterialComponentsModule,FormsModule,CommonModule,SharedModule],
     declarations:[CurrentissueComponent,IssueComponent],
-    providers:[IssueService]
+    providers:[IssueService,CurrentIssueResolver]
 })
 export class IssueModule {
 

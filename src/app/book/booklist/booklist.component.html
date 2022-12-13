@@ -1,0 +1,16 @@
+<div id="booklist">
+    <div class="book-main">
+      <div class="book-card" *ngFor="let book of bookList.Books">
+            <div class="book-card-body">
+                <div class="book-card-body-icon">
+                    <mat-icon>menu_book</mat-icon>
+                </div>
+            </div>
+            <div class="book-card-footer">  
+                      <div>
+                        <a mat-list-item routerLinkActive="active" [routerLink]="['/book',book.BookID,book.BookBrowserTitle]">{{book.BookTitle}} </a>
+                      </div>
+            </div>
+      </div>
+    </div>
+</div>

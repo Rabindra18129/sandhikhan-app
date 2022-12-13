@@ -1,0 +1,42 @@
+<div id="book-detail">
+    <div class="book-container">
+        <div class="book-header">
+            <div>
+              <button id="openMenuButton" (click)="openMenu($event)" mat-button><mat-icon>list</mat-icon> </button>
+            </div>
+            <div style="padding: 5px;">
+              {{currentChapter.BookTitle}}
+            </div>
+          </div>
+          <div id="book-collpase-sidebar">
+            <div style="display: flex; align-items: flex-end; flex-direction: column-reverse; border-bottom: 1px solid lightgrey;">
+              <div>
+                <button id="closeMenuButton"  (click)="closeMenu($event)" mat-button><mat-icon>close</mat-icon> </button>
+              </div>
+              
+            </div>
+            <div class="book-sidebar-content">
+              <div  *ngFor="let chapter of bookdetails" class="book-sidebar-content-list" >
+                <button style="align-self: left;" (click)="onSideMenuClick($event)" mat-button [attr.data-chapterid]="chapter.ChapterID"> {{chapter.ChapterTitle}}</button>
+              </div>
+            </div>
+            
+          </div>
+        <div class="book-body">
+          <div class="book-sidebar" >
+            <div class="book-sidebar-content">
+              <div *ngFor="let chapter of bookdetails" class="book-sidebar-content-list" >
+                <button style="align-self: left;" (click)="onSideMenuClick($event)" [attr.data-chapterid]="chapter.ChapterID" mat-button> {{chapter.ChapterTitle}}</button>
+              </div>
+            </div>
+          </div>
+          <div class="book-content">
+            <app-chapter></app-chapter>
+            <div class="chapter-container-footer">
+              <div><button [attr.data-chapterid]="currentChapter.PreviousChapterID" (click)="changeChapter($event)" [disabled]="!currentChapter.PreviousChapterID" id="prvCptButton"  mat-button><mat-icon>arrow_back</mat-icon> Previous Chapter </button></div>
+              <div style="justify-self: end;"><button (click)="changeChapter($event)" [attr.data-chapterid]="currentChapter.NextChapterID" [disabled]="!currentChapter.NextChapterID" id="nxtCptButton" mat-button>Next Chapter <mat-icon [attr.data-chapterid]="currentChapter.NextChapterID">arrow_forward</mat-icon> </button></div>
+          </div>
+          </div>
+        </div>
+      </div>
+</div>

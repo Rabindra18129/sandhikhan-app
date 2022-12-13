@@ -1,0 +1,26 @@
+#chapter-container{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 3fr auto;
+}
+.chapter-container-title{
+    padding: 0%;
+}
+.chapter-container-body{
+    border-bottom: 1px solid lightgrey;
+    opacity: 1;
+    transition: all 200ms ease-in-out 0s;
+}
+@keyframes fadein { 
+    0% {
+      opacity: 0;
+    }
+  
+    100% {
+      opacity: 1;
+    }
+  }
+  
+.chapter-fadein{
+    animation: fadein 1s 1;
+}
